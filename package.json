@@ -4,24 +4,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "tsc && nodemon ./dist/index.js",
+    "start": "node ./dist/index.js",
+    "prisma:generate" : "prisma generate",
+    "migration:create" : "prisma migrate dev --create-only",
+    "migrate" : "prisma migrate deploy" 
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "dotenv": "^17.2.0",
-    "nodemon": "^3.1.10"
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.15.0",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
-    "connect-mongo": "^5.1.0",
+    "@prisma/client": "^6.15.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-rate-limit": "^8.0.1",
-    "express-slow-down": "^3.0.0",
-    "mongodb": "^6.18.0",
-    "mongoose": "^8.16.4"
+    "express-slow-down": "^3.0.0"
   }
 }
